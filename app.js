@@ -100,6 +100,7 @@ routerLoader(_path.controller);
 global.mongo = require('mongodb');
 global.dbname = 'whereis';
 global.db = new mongo.Db(dbname, new mongo.Server('localhost', 27017, {auto_reconnect: true}));
+global.mongoose = require('mongoose');
 
 db.open(function(err, db) {
     if(!err) {
