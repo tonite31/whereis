@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="UTF-8" />
+<title>Where is</title>
+
+<script src="@{libs}/jquery-2.2.3.min.js"></script>
+<script src="@{libs}/rest-api.js"></script>
+
+<script>
+$(document).ready(function()
+{
+	Rest.get('persons', null, function(result)
+	{
+		console.log("결과 : ", result);
+	},
+	function(error)
+	{
+		console.log("에러 : ", error);
+	});
+});
+</script>
+</head>
+
+<body>
+	
+</body>
+
+</html>
