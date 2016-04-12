@@ -55,17 +55,17 @@ var Rest = {};
 		this.call(name, 'get', data, success, error);
 	};
 	
-	this.put = function()
+	this.put = function(name, data, success, error)
 	{
 		this.call(name, 'put', data, success, error);
 	};
 	
-	this.post = function()
+	this.post = function(name, data, success, error)
 	{
 		this.call(name, 'post', data, success, error);
 	};
 	
-	this.delete = function()
+	this.delete = function(name, data, success, error)
 	{
 		this.call(name, 'delete', data, success, error);
 	};
@@ -77,10 +77,14 @@ var Rest = {};
 		
 		var url = '/' + name;
 		if((type == 'get' && data._id) || type == 'put' || type == 'delete')
+		{
 			url += '/' + data._id;
+			delete data._id;
+		}
 		
 		var xmlhttp=new XMLHttpRequest();
 		xmlhttp.open(type, url);
+		xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		xmlhttp.onreadystatechange = function()
 		{
 		    if (xmlhttp.readyState == XMLHttpRequest.DONE)

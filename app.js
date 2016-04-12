@@ -37,10 +37,6 @@ process.argv.forEach(function (val, index, array)
  * create express and imp
  */
 var app = global._app = express();
-var server = app.listen(_options.port, function()
-{
-	console.log('Listening on port %d', server.address().port);
-});
 
 var imp = require('nodejs-imp');
 imp.setPattern(_path.home + '/views/html/{{name}}.html');
@@ -48,6 +44,20 @@ imp.setPattern(_path.home + '/views/html/{{name}}.html');
 var Renderer = require(_path.libs + '/Renderer');
 Renderer.viewPath = '/views'
 imp.addRenderModule(Renderer.replacePath);
+
+/**
+ * set mongoose
+ */
+global.dbname = 'whereis';
+global.mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/whereis', function(err)
+{
+	console.log('mongoose is connected.');
+	var server = app.listen(_options.port, function()
+	{
+		console.log('Listening on port %d', server.address().port);
+	});
+});
 
 /**
  * set static dirs
@@ -96,20 +106,3 @@ imp.setBinderModules(BinderLoader.modules);
 
 var routerLoader = require(_path.libs + '/RouterLoader');
 routerLoader(_path.controller);
-
-global.mongo = require('mongodb');
-global.dbname = 'whereis';
-global.db = new mongo.Db(dbname, new mongo.Server('localhost', 27017, {auto_reconnect: true}));
-global.mongoose = require('mongoose');
-
-db.open(function(err, db) {
-    if(!err) {
-        console.log("Connected to '" + dbname + "' database");
-        db.collection(dbname, {safe:true}, function(err, collection) {
-            if (err) {
-                console.log("The '" + dbname + "' collection doesn't exist.");
-                populateDB();
-            }
-        });
-    }
-});
