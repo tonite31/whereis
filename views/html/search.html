@@ -1,0 +1,77 @@
+<script>
+$(document).ready(function()
+{
+	$('#searchPanel .search-button').on('click', function()
+	{
+		$('#searchPanel').hide();
+		$('#resultPanel').show();
+	});
+	
+	$('#resultPanel  .search-button').on('click', function()
+	{
+		$('#resultPanel').hide();
+		$('#searchPanel').show();
+	});
+});
+</script>
+
+<div class="center-wrapper">
+	<div class="col col-sm-6" style="float:none; display: inline-block;" id="searchPanel">
+		<h1 style="text-align:center;">Search</h1>
+		<div>
+			<div class="input-group" style="width: 100%;">
+				<input type="text" class="form-control" style="width: 45%; float: none; display: inline-block;" placeholder="최소나이" aria-describedby="basic-addon1">
+				~
+				<input type="text" class="form-control" style="width: 45%; float: none; display: inline-block;" placeholder="최대나이" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<br>
+		<div>
+			<div class="input-group" style="width: 100%; text-align: center;">
+				<input type="text" class="form-control" placeholder="위치" style="width: 94.5%; float: none; display: inline-block;" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<br>
+		<div>
+			<div style="text-align: center;">
+				<a href="#" class="search-button"><button type="button" class="btn btn-primary">검색</button></a>
+			</div>
+		</div>
+	</div>
+	<div style="display: none;" id="resultPanel">
+		<div class="col col-sm-6" style="float:none; display: inline-block; margin-bottom: 20px;">
+			<h1 style="text-align:center;">Search</h1>
+			<div>
+				<div style="text-align: center;">
+					<a href="#" class="search-button"><button type="button" class="btn btn-primary">재검색</button></a>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="text-align: center;">
+			<div class="col col-sm-6" style="float:none; display: inline-block;">
+				<div class="thumbnail">
+					<img style="display: inline-block; vertical-align: top;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0MGYxNDZjYTkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQwZjE0NmNhOSI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI2MSIgeT0iOTQuNSI+MTcxeDE4MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="...">
+					<div class="caption" style="display: inline-block;">
+						<h3>닉네임</h3>
+						<p>나이 : 33</p>
+						<p>위치 : 서울</p>
+						<p><a href="#" class="btn btn-primary" role="button">수락</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="text-align: center;">
+			<div class="col col-sm-6" style="float:none; display: inline-block;">
+				<div class="thumbnail">
+					<img style="display: inline-block; vertical-align: top;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0MGYxNDZjYTkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQwZjE0NmNhOSI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI2MSIgeT0iOTQuNSI+MTcxeDE4MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="...">
+					<div class="caption" style="display: inline-block;">
+						<h3>닉네임</h3>
+						<p>나이 : 33</p>
+						<p>위치 : 서울</p>
+						<p><a href="#" class="btn btn-primary" role="button">수락</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

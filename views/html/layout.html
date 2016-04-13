@@ -7,6 +7,7 @@
 <title>Where is</title>
 
 <link href="@{libs}/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="@{css}/common.css" rel="stylesheet">
 
 <script src="@{libs}/jquery-2.2.3.min.js"></script>
 <script src="@{libs}/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -16,6 +17,21 @@
 
 <body>
 	${#{page}}
+	<div style="text-align: center;" id="footer">
+		<nav class="navbar navbar-default" style="display: inline-block;">
+			<div class="container-fluid" style="padding:0;">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding:0;">
+		      		<ul class="nav navbar-nav">
+		        		<li class="active"><a href="/list"><span style="font-size: 30px;" class="glyphicon glyphicon-th-list"></span> <span class="sr-only">(current)</span></a></li>
+		        		<li><a href="/search"><span style="font-size: 30px;" class="glyphicon glyphicon-search"></span></a></li>
+		        		<li><a href="/store"><span style="font-size: 30px;" class="glyphicon glyphicon-shopping-cart"></span></a></li>
+		        		<li><a href="/message"><span style="font-size: 30px;" class="glyphicon glyphicon-envelope"></span></a></li>
+		        		<li><a href="/profile"><span style="font-size: 30px;" class="glyphicon glyphicon-user"></span></a></li>
+				    </ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </body>
 
 </html>
