@@ -6,6 +6,7 @@
     "method-override": "*",
     "mongodb": "^2.1.16",
     "mongoose": "^4.4.12",
+    "node-restful": "*",
     "nodejs-imp": "*"
   }
 }

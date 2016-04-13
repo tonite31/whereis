@@ -13,7 +13,8 @@ global._path =
 	home : __dirname,
 	controller : __dirname + '/controller',
 	views : __dirname + '/views',
-	libs : __dirname + '/libs'
+	libs : __dirname + '/libs',
+	api : __dirname + '/api'
 };
 
 /**
@@ -106,3 +107,6 @@ imp.setBinderModules(BinderLoader.modules);
 
 var routerLoader = require(_path.libs + '/RouterLoader');
 routerLoader(_path.controller);
+
+var apiLoader = require(_path.libs + '/APILoader');
+apiLoader(_path.api);
